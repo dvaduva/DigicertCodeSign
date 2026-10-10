@@ -1,0 +1,10 @@
+* text=auto
+
+*.cs      text eol=crlf
+*.csproj  text eol=crlf
+*.sln     text eol=crlf
+*.config  text eol=crlf
+*.md      text
+
+*.ico     binary
+*.png     binary
