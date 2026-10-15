@@ -45,6 +45,7 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLine.cs" />
     <Compile Include="ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -76,6 +76,18 @@ signtool sign /tr <timestamp-url> /td sha256 /fd sha256 /sha1 <thumbprint> "<fil
 
 To sign from your own scripts or build tools, click **Login (auto-fill)** and leave the app running. Any Token Logon dialog that appears is answered automatically. Once the token is logged in, SafeNet usually keeps the session open, so later `signtool` calls in your scripts will not prompt again.
 
+### Command line
+
+Files can also be signed without opening the window, using the saved configuration:
+
+```bat
+DigicertCodeSign.exe --sign <file> [<file>...]
+```
+
+The Token Logon dialog is answered automatically, progress is written to the console, signed files are added to the history, and the exit code is `0` (signed), `1` (signing failed) or `2` (bad arguments or missing configuration). `--help` shows the usage.
+
+The app is a Windows (GUI) executable, so an interactive `cmd` prompt does not wait for it. Batch files, MSBuild `Exec` and redirected output do wait; in an interactive prompt use `start /wait DigicertCodeSign.exe --sign ...`, or in PowerShell pipe it (`... | Out-String`).
+
 **SafeNet Tools** opens SafeNet Authentication Client (`SACTools.exe`) for token management.
 
 ## Data storage
